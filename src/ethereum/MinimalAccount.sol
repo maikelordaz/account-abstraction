@@ -65,6 +65,13 @@ contract MinimalAccount is Ownable {
         _payPrefund(missingAccountFunds);
     }
 
+    function withdrawBalance() external onlyOwner {
+        (bool success, ) = payable(owner()).call{value: address(this).balance}(
+            ""
+        );
+        require(success, "MinimalAccount: Withdraw failed");
+    }
+
     /*//////////////////////////////////////////////////////////////
                            INTERNAL FUNCTIONS
     //////////////////////////////////////////////////////////////*/

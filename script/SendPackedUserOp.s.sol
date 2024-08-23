@@ -13,9 +13,8 @@ import {DevOpsTools} from "lib/foundry-devops/src/DevOpsTools.sol";
 contract SendPackedUserOp is Script {
     using MessageHashUtils for bytes32;
 
-    // Make sure you trust this user - don't run this on Mainnet!
     address constant RANDOM_APPROVER =
-        0x9EA9b0cc1919def1A3CfAEF4F7A66eE3c36F86fC;
+        0x02C0991bCE8f8461281483D89763268c60086DaC;
 
     function run() public {
         // Setup
